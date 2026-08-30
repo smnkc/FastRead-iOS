@@ -50,12 +50,29 @@ public struct RSVPCenteredWordView: View {
             }
             
             GeometryReader { geo in
-                let focalX = geo.size.width * 0.50 // Ekranın tam yatay orta çizgisi (%50)
-                let centerY = geo.size.height * 0.50 // Dikey orta nokta
-                let rsvpFont = AppFonts.rsvpFont(family: theme.fontPreference, size: theme.textSize.fontSize)
+                // Doğal okuma odak merkezi (%45 yatay oran, uzun sonekler için ideal alan sağlar)
+                let focalX = geo.size.width * 0.44
+                let centerY = geo.size.height * 0.50
+                
+                // Uzun kelimeler için akıllı otomatik font ölçeklendirme (Kelimenin ekrandan taşmasını ve kesilmesini önler)
+                let baseFontSize = theme.textSize.fontSize
+                let charCount = displayToken.fullText.count
+                let effectiveFontSize: CGFloat = {
+                    if charCount >= 14 {
+                        let scale = max(0.62, 13.0 / Double(charCount))
+                        return max(26, baseFontSize * CGFloat(scale))
+                    } else if charCount >= 11 {
+                        let scale = max(0.80, 11.5 / Double(charCount))
+                        return max(32, baseFontSize * CGFloat(scale))
+                    } else {
+                        return baseFontSize
+                    }
+                }()
+                
+                let rsvpFont = AppFonts.rsvpFont(family: theme.fontPreference, size: effectiveFontSize)
                 let halfORP = max(4, orpCharWidth / 2)
-                let prefixWidth = max(0, focalX - halfORP)
-                let suffixWidth = max(0, geo.size.width - (focalX + halfORP))
+                let prefixWidth = max(0, focalX - halfORP - 10)
+                let suffixWidth = max(0, geo.size.width - (focalX + halfORP) - 10)
                 
                 ZStack(alignment: .topLeading) {
                     // 1. KILAVUZ ÇİZGİLERİ VE ÇENTİKLER (Tam focalX Noktasında)
@@ -109,9 +126,10 @@ public struct RSVPCenteredWordView: View {
                             .font(rsvpFont)
                             .foregroundColor(textColor)
                             .lineLimit(1)
-                            .fixedSize()
+                            .minimumScaleFactor(0.7)
+                            .fixedSize(horizontal: false, vertical: true)
                             .frame(width: prefixWidth, alignment: .trailing)
-                            .position(x: prefixWidth / 2, y: centerY)
+                            .position(x: 10 + (prefixWidth / 2), y: centerY)
                     }
                     
                     // 4. SON EK (Sol kenarı ORP harfinin sağına tam değerle oturur)
@@ -120,7 +138,8 @@ public struct RSVPCenteredWordView: View {
                             .font(rsvpFont)
                             .foregroundColor(textColor)
                             .lineLimit(1)
-                            .fixedSize()
+                            .minimumScaleFactor(0.7)
+                            .fixedSize(horizontal: false, vertical: true)
                             .frame(width: suffixWidth, alignment: .leading)
                             .position(x: (focalX + halfORP) + (suffixWidth / 2), y: centerY)
                     }

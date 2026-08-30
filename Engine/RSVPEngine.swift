@@ -33,18 +33,15 @@ public struct RSVPWordToken: Identifiable, Equatable {
         self.isClauseEnd = lastChar == "," || lastChar == ";" || lastChar == "-"
         
         // ORP (Optimal Recognition Point / Odak Harfi) Hesaplama:
-        // Kelimenin harf uzunluğuna göre odak harfi indeksi
+        // Bilimsel RSVP standartlarına göre gözün odak noktası kelime kökünün başında kalır
         let length = trimmed.count
         let orpIdx: Int
         switch length {
-        case 0...1: orpIdx = 0   // 1 harf: 1. harf
-        case 2:     orpIdx = 0   // 2 harf: 1. harf (ör. [a]z)
-        case 3...4: orpIdx = 1   // 3-4 harf: 2. harf (ör. d[a]ha)
-        case 5...6: orpIdx = 2   // 5-6 harf: 3. harf (ör. bu[n]un, Ek[r]an, iy[i]dir)
-        case 7...8: orpIdx = 3   // 7-8 harf: 4. harf (ör. oku[y]ucu, Rea[d]Maxx)
-        case 9...10: orpIdx = 4  // 9-10 harf: 5. harf (ör. keli[m]eler)
-        case 11...12: orpIdx = 5
-        default:    orpIdx = max(2, length / 2) // Uzun kelimelerde tam ortası
+        case 0...1: orpIdx = 0   // 1 harf: 1. harf (ör. o)
+        case 2...5: orpIdx = 1   // 2-5 harf: 2. harf (ör. d[a]ha, b[u]nun, ç[o]k)
+        case 6...9: orpIdx = 2   // 6-9 harf: 3. harf (ör. ek[r]an, ok[u]ma, kel[i]me)
+        case 10...13: orpIdx = 3 // 10-13 harf: 4. harf (ör. gel[e]neksel, kon[u]şurken)
+        default:      orpIdx = 4 // 14+ harf (uzun kelimeler): 5. harf (ör. alış[k]anlıklarımızda)
         }
         
         let safeIndex = min(orpIdx, max(0, length - 1))
