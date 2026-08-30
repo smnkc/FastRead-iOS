@@ -1,0 +1,515 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9B0100012C81000100000001 /* FastReadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0100012C81000100000001 /* FastReadApp.swift */; };
+		9B0100022C81000100000001 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0100022C81000100000001 /* AppColors.swift */; };
+		9B0100032C81000100000001 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0100032C81000100000001 /* AppFonts.swift */; };
+		9B0100042C81000100000001 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0100042C81000100000001 /* ThemeManager.swift */; };
+		9B0100052C81000100000001 /* DocumentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0100052C81000100000001 /* DocumentItem.swift */; };
+		9B0100062C81000100000001 /* ReaderTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0100062C81000100000001 /* ReaderTheme.swift */; };
+		9B0100072C81000100000001 /* ORPColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0100072C81000100000001 /* ORPColor.swift */; };
+		9B0100082C81000100000001 /* FontPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0100082C81000100000001 /* FontPreference.swift */; };
+		9B0100092C81000100000001 /* ReaderSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0100092C81000100000001 /* ReaderSettings.swift */; };
+		9B01000A2C81000100000001 /* RSVPEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A01000A2C81000100000001 /* RSVPEngine.swift */; };
+		9B01000B2C81000100000001 /* DocumentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A01000B2C81000100000001 /* DocumentParser.swift */; };
+		9B01000C2C81000100000001 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A01000C2C81000100000001 /* HapticsManager.swift */; };
+		9B01000D2C81000100000001 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A01000D2C81000100000001 /* RootView.swift */; };
+		9B01000E2C81000100000001 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A01000E2C81000100000001 /* MainTabView.swift */; };
+		9B01000F2C81000100000001 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A01000F2C81000100000001 /* SplashScreenView.swift */; };
+		9B0100102C81000100000001 /* OnboardingFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0100102C81000100000001 /* OnboardingFlowView.swift */; };
+		9B0100112C81000100000001 /* OnboardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0100112C81000100000001 /* OnboardingCardView.swift */; };
+		9B0100122C81000100000001 /* ReaderHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0100122C81000100000001 /* ReaderHomeView.swift */; };
+		9B0100132C81000100000001 /* RSVPPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0100132C81000100000001 /* RSVPPlayerView.swift */; };
+		9B0100142C81000100000001 /* ContentNavigatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0100142C81000100000001 /* ContentNavigatorView.swift */; };
+		9B0100152C81000100000001 /* SpeedPickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0100152C81000100000001 /* SpeedPickerSheet.swift */; };
+		9B0100162C81000100000001 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0100162C81000100000001 /* LibraryView.swift */; };
+		9B0100172C81000100000001 /* WebLinkInputSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0100172C81000100000001 /* WebLinkInputSheet.swift */; };
+		9B0100182C81000100000001 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0100182C81000100000001 /* SettingsView.swift */; };
+		9B0100192C81000100000001 /* ReaderTimingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0100192C81000100000001 /* ReaderTimingView.swift */; };
+		9B01001A2C81000100000001 /* ReaderAppearanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A01001A2C81000100000001 /* ReaderAppearanceView.swift */; };
+		9B01001B2C81000100000001 /* ReaderHapticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A01001B2C81000100000001 /* ReaderHapticsView.swift */; };
+		9B01001C2C81000100000001 /* FloatingTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A01001C2C81000100000001 /* FloatingTabBar.swift */; };
+		9B01001D2C81000100000001 /* RSVPCenteredWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A01001D2C81000100000001 /* RSVPCenteredWordView.swift */; };
+		9B01001E2C81000100000001 /* CustomModalDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A01001E2C81000100000001 /* CustomModalDialog.swift */; };
+		9B01001F2C81000100000001 /* CustomPillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A01001F2C81000100000001 /* CustomPillButton.swift */; };
+		9B0100202C81000100000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A0100202C81000100000001 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9A0100002C81000100000001 /* FastRead.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastRead.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A0100012C81000100000001 /* FastReadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastReadApp.swift; sourceTree = "<group>"; };
+		9A0100022C81000100000001 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		9A0100032C81000100000001 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
+		9A0100042C81000100000001 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		9A0100052C81000100000001 /* DocumentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentItem.swift; sourceTree = "<group>"; };
+		9A0100062C81000100000001 /* ReaderTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderTheme.swift; sourceTree = "<group>"; };
+		9A0100072C81000100000001 /* ORPColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORPColor.swift; sourceTree = "<group>"; };
+		9A0100082C81000100000001 /* FontPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontPreference.swift; sourceTree = "<group>"; };
+		9A0100092C81000100000001 /* ReaderSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderSettings.swift; sourceTree = "<group>"; };
+		9A01000A2C81000100000001 /* RSVPEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSVPEngine.swift; sourceTree = "<group>"; };
+		9A01000B2C81000100000001 /* DocumentParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentParser.swift; sourceTree = "<group>"; };
+		9A01000C2C81000100000001 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		9A01000D2C81000100000001 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		9A01000E2C81000100000001 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		9A01000F2C81000100000001 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		9A0100102C81000100000001 /* OnboardingFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlowView.swift; sourceTree = "<group>"; };
+		9A0100112C81000100000001 /* OnboardingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCardView.swift; sourceTree = "<group>"; };
+		9A0100122C81000100000001 /* ReaderHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderHomeView.swift; sourceTree = "<group>"; };
+		9A0100132C81000100000001 /* RSVPPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSVPPlayerView.swift; sourceTree = "<group>"; };
+		9A0100142C81000100000001 /* ContentNavigatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentNavigatorView.swift; sourceTree = "<group>"; };
+		9A0100152C81000100000001 /* SpeedPickerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedPickerSheet.swift; sourceTree = "<group>"; };
+		9A0100162C81000100000001 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		9A0100172C81000100000001 /* WebLinkInputSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebLinkInputSheet.swift; sourceTree = "<group>"; };
+		9A0100182C81000100000001 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		9A0100192C81000100000001 /* ReaderTimingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderTimingView.swift; sourceTree = "<group>"; };
+		9A01001A2C81000100000001 /* ReaderAppearanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderAppearanceView.swift; sourceTree = "<group>"; };
+		9A01001B2C81000100000001 /* ReaderHapticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderHapticsView.swift; sourceTree = "<group>"; };
+		9A01001C2C81000100000001 /* FloatingTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTabBar.swift; sourceTree = "<group>"; };
+		9A01001D2C81000100000001 /* RSVPCenteredWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSVPCenteredWordView.swift; sourceTree = "<group>"; };
+		9A01001E2C81000100000001 /* CustomModalDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModalDialog.swift; sourceTree = "<group>"; };
+		9A01001F2C81000100000001 /* CustomPillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPillButton.swift; sourceTree = "<group>"; };
+		9A0100202C81000100000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9A0100212C81000100000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9A0100302C81000100000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9A0100402C81000100000001 = {
+			isa = PBXGroup;
+			children = (
+				9A0100012C81000100000001 /* FastReadApp.swift */,
+				9A0100212C81000100000001 /* Info.plist */,
+				9A0100202C81000100000001 /* Assets.xcassets */,
+				9A0100432C81000100000001 /* Theme */,
+				9A0100442C81000100000001 /* Models */,
+				9A0100452C81000100000001 /* Engine */,
+				9A0100462C81000100000001 /* Views */,
+				9A0100422C81000100000001 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9A0100422C81000100000001 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A0100002C81000100000001 /* FastRead.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A0100432C81000100000001 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				9A0100022C81000100000001 /* AppColors.swift */,
+				9A0100032C81000100000001 /* AppFonts.swift */,
+				9A0100042C81000100000001 /* ThemeManager.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		9A0100442C81000100000001 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9A0100052C81000100000001 /* DocumentItem.swift */,
+				9A0100062C81000100000001 /* ReaderTheme.swift */,
+				9A0100072C81000100000001 /* ORPColor.swift */,
+				9A0100082C81000100000001 /* FontPreference.swift */,
+				9A0100092C81000100000001 /* ReaderSettings.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9A0100452C81000100000001 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				9A01000A2C81000100000001 /* RSVPEngine.swift */,
+				9A01000B2C81000100000001 /* DocumentParser.swift */,
+				9A01000C2C81000100000001 /* HapticsManager.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		9A0100462C81000100000001 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9A0100472C81000100000001 /* Root */,
+				9A0100482C81000100000001 /* Onboarding */,
+				9A0100492C81000100000001 /* Reader */,
+				9A01004A2C81000100000001 /* Library */,
+				9A01004B2C81000100000001 /* Settings */,
+				9A01004C2C81000100000001 /* Components */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9A0100472C81000100000001 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				9A01000D2C81000100000001 /* RootView.swift */,
+				9A01000E2C81000100000001 /* MainTabView.swift */,
+				9A01000F2C81000100000001 /* SplashScreenView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		9A0100482C81000100000001 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				9A0100102C81000100000001 /* OnboardingFlowView.swift */,
+				9A0100112C81000100000001 /* OnboardingCardView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		9A0100492C81000100000001 /* Reader */ = {
+			isa = PBXGroup;
+			children = (
+				9A0100122C81000100000001 /* ReaderHomeView.swift */,
+				9A0100132C81000100000001 /* RSVPPlayerView.swift */,
+				9A0100142C81000100000001 /* ContentNavigatorView.swift */,
+				9A0100152C81000100000001 /* SpeedPickerSheet.swift */,
+			);
+			path = Reader;
+			sourceTree = "<group>";
+		};
+		9A01004A2C81000100000001 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				9A0100162C81000100000001 /* LibraryView.swift */,
+				9A0100172C81000100000001 /* WebLinkInputSheet.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		9A01004B2C81000100000001 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9A0100182C81000100000001 /* SettingsView.swift */,
+				9A0100192C81000100000001 /* ReaderTimingView.swift */,
+				9A01001A2C81000100000001 /* ReaderAppearanceView.swift */,
+				9A01001B2C81000100000001 /* ReaderHapticsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		9A01004C2C81000100000001 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9A01001C2C81000100000001 /* FloatingTabBar.swift */,
+				9A01001D2C81000100000001 /* RSVPCenteredWordView.swift */,
+				9A01001E2C81000100000001 /* CustomModalDialog.swift */,
+				9A01001F2C81000100000001 /* CustomPillButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9A0100502C81000100000001 /* FastRead */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A0100602C81000100000001 /* Build configuration list for PBXNativeTarget "FastRead" */;
+			buildPhases = (
+				9A0100312C81000100000001 /* Sources */,
+				9A0100302C81000100000001 /* Frameworks */,
+				9A0100322C81000100000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FastRead;
+			productName = FastRead;
+			productReference = 9A0100002C81000100000001 /* FastRead.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9A0100702C81000100000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 2660;
+				TargetAttributes = {
+					9A0100502C81000100000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 9A0100712C81000100000001 /* Build configuration list for PBXProject "FastRead" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = tr;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				tr,
+				Base,
+			);
+			mainGroup = 9A0100402C81000100000001;
+			productRefGroup = 9A0100422C81000100000001 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9A0100502C81000100000001 /* FastRead */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9A0100322C81000100000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B0100202C81000100000001 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9A0100312C81000100000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B0100012C81000100000001 /* FastReadApp.swift in Sources */,
+				9B0100022C81000100000001 /* AppColors.swift in Sources */,
+				9B0100032C81000100000001 /* AppFonts.swift in Sources */,
+				9B0100042C81000100000001 /* ThemeManager.swift in Sources */,
+				9B0100052C81000100000001 /* DocumentItem.swift in Sources */,
+				9B0100062C81000100000001 /* ReaderTheme.swift in Sources */,
+				9B0100072C81000100000001 /* ORPColor.swift in Sources */,
+				9B0100082C81000100000001 /* FontPreference.swift in Sources */,
+				9B0100092C81000100000001 /* ReaderSettings.swift in Sources */,
+				9B01000A2C81000100000001 /* RSVPEngine.swift in Sources */,
+				9B01000B2C81000100000001 /* DocumentParser.swift in Sources */,
+				9B01000C2C81000100000001 /* HapticsManager.swift in Sources */,
+				9B01000D2C81000100000001 /* RootView.swift in Sources */,
+				9B01000E2C81000100000001 /* MainTabView.swift in Sources */,
+				9B01000F2C81000100000001 /* SplashScreenView.swift in Sources */,
+				9B0100102C81000100000001 /* OnboardingFlowView.swift in Sources */,
+				9B0100112C81000100000001 /* OnboardingCardView.swift in Sources */,
+				9B0100122C81000100000001 /* ReaderHomeView.swift in Sources */,
+				9B0100132C81000100000001 /* RSVPPlayerView.swift in Sources */,
+				9B0100142C81000100000001 /* ContentNavigatorView.swift in Sources */,
+				9B0100152C81000100000001 /* SpeedPickerSheet.swift in Sources */,
+				9B0100162C81000100000001 /* LibraryView.swift in Sources */,
+				9B0100172C81000100000001 /* WebLinkInputSheet.swift in Sources */,
+				9B0100182C81000100000001 /* SettingsView.swift in Sources */,
+				9B0100192C81000100000001 /* ReaderTimingView.swift in Sources */,
+				9B01001A2C81000100000001 /* ReaderAppearanceView.swift in Sources */,
+				9B01001B2C81000100000001 /* ReaderHapticsView.swift in Sources */,
+				9B01001C2C81000100000001 /* FloatingTabBar.swift in Sources */,
+				9B01001D2C81000100000001 /* RSVPCenteredWordView.swift in Sources */,
+				9B01001E2C81000100000001 /* CustomModalDialog.swift in Sources */,
+				9B01001F2C81000100000001 /* CustomPillButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		9A0100802C81000100000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9A0100812C81000100000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		9A0100822C81000100000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FastRead;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smnkc.FastRead;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9A0100832C81000100000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FastRead;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smnkc.FastRead;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9A0100602C81000100000001 /* Build configuration list for PBXNativeTarget "FastRead" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A0100822C81000100000001 /* Debug */,
+				9A0100832C81000100000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A0100712C81000100000001 /* Build configuration list for PBXProject "FastRead" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A0100802C81000100000001 /* Debug */,
+				9A0100812C81000100000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9A0100702C81000100000001 /* Project object */;
+}
