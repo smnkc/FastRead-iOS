@@ -19,39 +19,31 @@ public struct L10n {
     public static var sampleText: String {
         if isTurkish {
             return """
-            Ekran aydınlanır ve senden hiçbir şey istenmez.
-            Kurulum yok, bağlılık yok, sadece kelimeler.
-            
-            Daha hızlı okumak, daha az önemsemek demek değildir.
-            Beynine daha çok güvenmek demektir.
-            
-            Beynin örüntüler konusunda çok iyidir.
-            Sandığından daha iyi.
-            
-            Okumak genellikle çaba ister.
-            Bu istemez.
-            
-            Kelimeler gelir.
-            Kelimeler gider.
-            Oyalanmazlar.
+            Zihnin derinliklerine doğru bir yolculuğa hoş geldiniz.
+
+            Okumak, insanlık tarihinin en büyüleyici zihinsel eylemlerinden biridir. Bir başkasının zihninde doğan bir düşünce, yüzyıllar sonra sizin zihninizde yeniden hayat bulur. Sayfalar, satırlar ve kelimeler; zamana meydan okuyan görünmez köprülerdir.
+
+            Geleneksel okuma alışkanlıklarımızda gözlerimiz satırlar arasında sürekli sıçramalar yapar. Bu istemsiz göz hareketleri hem enerjimizi tüketir hem de dikkatimizi dağıtır. Oysa insan beyni, kelimeleri harf harf değil, anlam örüntüleri halinde bir bütün olarak kavramak üzere tasarlanmıştır.
+
+            FastRead tam bu noktada devreye girer. Kelimeleri doğrudan gözünüzün en rahat odaklandığı merkeze getirerek göz kaslarının yorulmasını önler. Zihniniz, gereksiz fiziksel hareketlerden arınarak sadece fikrin özüne odaklanır.
+
+            Hızlı okumak, metni aceleyle geçmek değildir; aksine dikkatinizi en yüksek seviyeye çıkararak anlama derinliğini artırmaktır. Zamanınızı geri kazandıkça daha çok öğrenir, daha geniş düşünür ve dünyayı daha berrak bir pencereden görmeye başlarsınız.
+
+            Şimdi arkanıza yaslanın, derin bir nefes alın ve kelimelerin zihninizde zahmetsizce akmasına izin verin.
             """
         } else {
             return """
-            The screen lights up and nothing is asked of you.
-            No setup, no commitment, just words.
-            
-            Reading faster does not mean caring less.
-            It means trusting your brain more.
-            
-            Your brain is remarkably good with patterns.
-            Better than you think.
-            
-            Reading usually takes effort.
-            This doesn't.
-            
-            Words come.
-            Words go.
-            They don't linger.
+            Welcome to a journey into the depths of focused cognition.
+
+            Reading is one of the most profound inventions of human civilization. A thought born in someone else's mind centuries ago can rekindle within your own mind in an instant. Words and sentences are timeless bridges connecting human intellect across eras.
+
+            In traditional reading, our eyes constantly make saccadic jumps back and forth across lines of text. These involuntary movements consume energy and disrupt the rhythm of comprehension. Yet the human brain was built to process meaningful patterns, not to strain over physical eye mechanics.
+
+            This is where FastRead transforms your experience. By presenting each word directly at your eye's optimal recognition point, it eliminates physical fatigue and cognitive friction. Your mind is freed to absorb pure meaning.
+
+            Speed reading is not about rushing through knowledge; it is about elevating your focus and deepening your understanding. As you master your reading rhythm, you unlock more time to learn, explore, and expand your horizons.
+
+            Now relax, take a deep breath, and let the stream of thoughts flow effortlessly through your mind.
             """
         }
     }
