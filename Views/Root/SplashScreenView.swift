@@ -44,16 +44,15 @@ public struct SplashScreenView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 32, style: .continuous))
                     } else {
                         // Vektörel Fallback Logo
-                        VStack(spacing: 6) {
-                            Image(systemName: "book.pages.fill")
-                                .font(.system(size: 48, weight: .semibold))
-                                .foregroundColor(AppColors.textPrimary)
-                            
-                            Rectangle()
-                                .fill(AppColors.orpRed)
-                                .frame(width: 50, height: 4)
-                                .cornerRadius(2)
-                        }
+                        Image(systemName: "book.pages.fill")
+                            .font(.system(size: 52, weight: .semibold))
+                            .foregroundStyle(
+                                LinearGradient(
+                                    colors: [AppColors.orpRed, Color.orange],
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
                     }
                 }
                 .scaleEffect(iconScale)
