@@ -214,7 +214,7 @@ public struct SettingsView: View {
                                             .foregroundColor(AppColors.textPrimary)
                                             .frame(maxWidth: .infinity, alignment: .leading)
                                         
-                                        Text("v1.0.0")
+                                        Text("v1.0.0 (Build 2)")
                                             .font(.system(size: 13, weight: .regular))
                                             .foregroundColor(AppColors.textSecondary)
                                             .multilineTextAlignment(.leading)
