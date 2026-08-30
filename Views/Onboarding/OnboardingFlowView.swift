@@ -110,9 +110,23 @@ public struct OnboardingFlowView: View {
                         }
                     }
                     
-                    Text("developed_by".localized)
-                        .font(.system(size: 12, weight: .regular))
-                        .foregroundColor(AppColors.textTertiary)
+                    Button(action: {
+                        if let appURL = URL(string: "instagram://user?username=smanakca"), UIApplication.shared.canOpenURL(appURL) {
+                            UIApplication.shared.open(appURL)
+                        } else if let webURL = URL(string: "https://instagram.com/smanakca") {
+                            UIApplication.shared.open(webURL)
+                        }
+                    }) {
+                        HStack(spacing: 4) {
+                            Text("developed_by".localized)
+                                .font(.system(size: 12, weight: .regular))
+                                .foregroundColor(AppColors.textTertiary)
+                            
+                            Image(systemName: "arrow.up.right")
+                                .font(.system(size: 10, weight: .semibold))
+                                .foregroundColor(AppColors.textTertiary)
+                        }
+                    }
                 }
                 .padding(20)
                 .background(

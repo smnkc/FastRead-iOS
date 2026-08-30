@@ -156,28 +156,49 @@ public struct SettingsView: View {
                                 .padding(.leading, 8)
                             
                             VStack(spacing: 0) {
-                                HStack(spacing: 14) {
-                                    Image(systemName: "person.fill")
-                                        .font(.system(size: 18, weight: .medium))
-                                        .foregroundColor(AppColors.textPrimary)
-                                        .frame(width: 28)
-                                    
-                                    VStack(alignment: .leading, spacing: 3) {
-                                        Text("row_author_title".localized)
-                                            .font(.system(size: 16, weight: .semibold))
+                                // Yazar Satırı (Instagram Linkli)
+                                Button(action: {
+                                    openInstagram()
+                                }) {
+                                    HStack(spacing: 14) {
+                                        Image(systemName: "person.fill")
+                                            .font(.system(size: 18, weight: .medium))
                                             .foregroundColor(AppColors.textPrimary)
-                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                            .frame(width: 28)
                                         
-                                        Text("author_with_heart".localized)
-                                            .font(.system(size: 13, weight: .regular))
-                                            .foregroundColor(AppColors.textSecondary)
-                                            .multilineTextAlignment(.leading)
+                                        VStack(alignment: .leading, spacing: 3) {
+                                            HStack(spacing: 6) {
+                                                Text("row_author_title".localized)
+                                                    .font(.system(size: 16, weight: .semibold))
+                                                    .foregroundColor(AppColors.textPrimary)
+                                                
+                                                Text("@smanakca")
+                                                    .font(.system(size: 12, weight: .semibold))
+                                                    .foregroundColor(AppColors.orpRed)
+                                                    .padding(.horizontal, 6)
+                                                    .padding(.vertical, 2)
+                                                    .background(
+                                                        Capsule()
+                                                            .fill(AppColors.orpRed.opacity(0.10))
+                                                    )
+                                            }
                                             .frame(maxWidth: .infinity, alignment: .leading)
+                                            
+                                            Text("author_with_heart".localized)
+                                                .font(.system(size: 13, weight: .regular))
+                                                .foregroundColor(AppColors.textSecondary)
+                                                .multilineTextAlignment(.leading)
+                                                .frame(maxWidth: .infinity, alignment: .leading)
+                                        }
+                                        
+                                        Spacer()
+                                        
+                                        Image(systemName: "arrow.up.right")
+                                            .font(.system(size: 13, weight: .bold))
+                                            .foregroundColor(AppColors.textTertiary)
                                     }
-                                    
-                                    Spacer()
+                                    .padding(18)
                                 }
-                                .padding(18)
                                 
                                 Divider().padding(.leading, 56)
                                 
@@ -220,6 +241,14 @@ public struct SettingsView: View {
         .navigationBarHidden(true)
         .sheet(isPresented: $showShareSheet) {
             ActivityViewController(activityItems: ["FastRead ile bilimsel RSVP tekniğini kullanarak 3 kata kadar daha hızlı okuyun!"])
+        }
+    }
+    
+    private func openInstagram() {
+        if let appURL = URL(string: "instagram://user?username=smanakca"), UIApplication.shared.canOpenURL(appURL) {
+            UIApplication.shared.open(appURL)
+        } else if let webURL = URL(string: "https://instagram.com/smanakca") {
+            UIApplication.shared.open(webURL)
         }
     }
 }

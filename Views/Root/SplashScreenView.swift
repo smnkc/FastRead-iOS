@@ -82,12 +82,20 @@ public struct SplashScreenView: View {
                 
                 Spacer()
                 
-                // Alt Bilgi
-                Text("Osman Akça")
-                    .font(.system(size: 12, weight: .regular))
-                    .foregroundColor(AppColors.textTertiary)
-                    .opacity(textOpacity)
-                    .padding(.bottom, 24)
+                // Alt Bilgi (Instagram Yönlendirmeli)
+                Button(action: {
+                    if let appURL = URL(string: "instagram://user?username=smanakca"), UIApplication.shared.canOpenURL(appURL) {
+                        UIApplication.shared.open(appURL)
+                    } else if let webURL = URL(string: "https://instagram.com/smanakca") {
+                        UIApplication.shared.open(webURL)
+                    }
+                }) {
+                    Text("Osman Akça")
+                        .font(.system(size: 12, weight: .regular))
+                        .foregroundColor(AppColors.textTertiary)
+                }
+                .opacity(textOpacity)
+                .padding(.bottom, 24)
             }
         }
         .onAppear {
