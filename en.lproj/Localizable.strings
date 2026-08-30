@@ -56,11 +56,14 @@
 "lib_empty_desc" = "Looks like you haven't added any documents yet!";
 "lib_add_paste" = "Paste Text";
 "lib_add_web" = "Web Link";
-"lib_add_file" = "Choose File (PDF, TXT)";
+"lib_add_file" = "Choose File (EPUB, PDF, TXT)";
 "lib_delete" = "Delete";
 "lib_words_count" = "%d words";
 "lib_clipboard_empty_title" = "No content found";
 "lib_clipboard_empty_desc" = "Nothing found in your clipboard. Please copy something and try again.";
+"lib_file_error_title" = "Could Not Open File";
+"lib_file_error_desc" = "The selected file could not be read or contains no text. Please make sure the file is a valid EPUB, PDF, or TXT file.";
+"lib_loading_file" = "Parsing document...";
 "lib_modal_close" = "Close";
 
 /* Web Link Sheet */

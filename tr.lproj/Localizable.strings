@@ -56,11 +56,14 @@
 "lib_empty_desc" = "Henüz hiç belge eklememişsiniz gibi görünüyor!";
 "lib_add_paste" = "Metin Yapıştır";
 "lib_add_web" = "Web Bağlantısı";
-"lib_add_file" = "Dosya Seç (PDF, TXT)";
+"lib_add_file" = "Dosya Seç (EPUB, PDF, TXT)";
 "lib_delete" = "Sil";
 "lib_words_count" = "%d kelime";
 "lib_clipboard_empty_title" = "İçerik bulunamadı";
 "lib_clipboard_empty_desc" = "Panonuzda hiçbir şey bulunamadı. Lütfen bir şey kopyalayıp tekrar deneyin.";
+"lib_file_error_title" = "Dosya Okunamadı";
+"lib_file_error_desc" = "Seçilen dosya okunamadı veya metin içeriği bulunamadı. Lütfen dosyanın geçerli bir EPUB, PDF veya TXT dosyası olduğundan emin olun.";
+"lib_loading_file" = "Belge ayrıştırılıyor...";
 "lib_modal_close" = "Kapat";
 
 /* Web Link Sheet */

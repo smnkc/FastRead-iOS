@@ -9,6 +9,9 @@ public struct ReaderHomeView: View {
     @State private var showWelcomeModal: Bool = false
     @State private var showEmptyClipboardModal: Bool = false
     @State private var showInvalidLinkModal: Bool = false
+    @State private var showFileErrorModal: Bool = false
+    @State private var errorMessage: String = ""
+    @State private var isLoadingFile: Bool = false
     @State private var showFilePicker: Bool = false
     @State private var showPlayer: Bool = false
     
@@ -101,6 +104,26 @@ public struct ReaderHomeView: View {
                 .padding(.bottom, 90) // Floating Tab Bar için boşluk
             }
             
+            // YÜKLEME GÖSTERGESİ
+            if isLoadingFile {
+                Color.black.opacity(0.2)
+                    .ignoresSafeArea()
+                
+                VStack(spacing: 12) {
+                    ProgressView()
+                        .scaleEffect(1.3)
+                    Text("Belge ayrıştırılıyor...")
+                        .font(.system(size: 14, weight: .medium))
+                        .foregroundColor(AppColors.textPrimary)
+                }
+                .padding(24)
+                .background(
+                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                        .fill(Color.white)
+                        .shadow(color: Color.black.opacity(0.1), radius: 16, x: 0, y: 6)
+                )
+            }
+            
             // ÖZEL MODALLAR
             if showWelcomeModal {
                 CustomModalDialog(
@@ -130,6 +153,16 @@ public struct ReaderHomeView: View {
                     showInvalidLinkModal = false
                 }
             }
+            
+            if showFileErrorModal {
+                CustomModalDialog(
+                    title: "Dosya Okunamadı",
+                    message: errorMessage,
+                    buttonTitle: "Kapat"
+                ) {
+                    showFileErrorModal = false
+                }
+            }
         }
         .onAppear {
             if !hasShownWelcomeAlert {
@@ -150,11 +183,14 @@ public struct ReaderHomeView: View {
     private func handlePasteboardRead() {
         if let result = DocumentParser.shared.getPasteboardContent() {
             if result.isURL {
+                isLoadingFile = true
                 Task {
                     do {
                         let article = try await DocumentParser.shared.extractTextFromURL(result.text)
                         await MainActor.run {
+                            isLoadingFile = false
                             let doc = DocumentItem(title: article.title, content: article.content, sourceType: .web)
+                            RSVPEngine.saveDocumentProgressToStorage(doc)
                             engine.loadText(article.content, document: doc)
                             showPlayer = true
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
@@ -163,12 +199,14 @@ public struct ReaderHomeView: View {
                         }
                     } catch {
                         await MainActor.run {
+                            isLoadingFile = false
                             showInvalidLinkModal = true
                         }
                     }
                 }
             } else {
                 let doc = DocumentItem(title: "Panodan Kopyalanan", content: result.text, sourceType: .pasted)
+                RSVPEngine.saveDocumentProgressToStorage(doc)
                 engine.loadText(result.text, document: doc)
                 showPlayer = true
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
@@ -181,17 +219,23 @@ public struct ReaderHomeView: View {
     }
     
     private func handlePickedFile(url: URL) {
-        if url.pathExtension.lowercased() == "pdf" {
-            if let result = DocumentParser.shared.extractTextFromPDF(at: url) {
-                let doc = DocumentItem(title: result.title, content: result.content, sourceType: .pdf)
-                engine.loadText(result.content, document: doc)
-                showPlayer = true
-            }
-        } else {
-            if let result = DocumentParser.shared.extractTextFromTextFile(at: url) {
-                let doc = DocumentItem(title: result.title, content: result.content, sourceType: .other)
-                engine.loadText(result.content, document: doc)
-                showPlayer = true
+        isLoadingFile = true
+        Task {
+            let parsed = DocumentParser.shared.parseDocument(at: url)
+            await MainActor.run {
+                isLoadingFile = false
+                if let result = parsed {
+                    let doc = DocumentItem(title: result.title, content: result.content, sourceType: result.sourceType)
+                    RSVPEngine.saveDocumentProgressToStorage(doc)
+                    engine.loadText(result.content, document: doc)
+                    showPlayer = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                        engine.play()
+                    }
+                } else {
+                    errorMessage = "Seçilen dosya okunamadı veya metin içeriği bulunamadı. Lütfen dosyanın geçerli bir EPUB, PDF veya TXT dosyası olduğundan emin olun."
+                    showFileErrorModal = true
+                }
             }
         }
     }
@@ -202,7 +246,7 @@ public struct DocumentPickerView: UIViewControllerRepresentable {
     let onPick: (URL) -> Void
     
     public func makeUIViewController(context: Context) -> UIDocumentPickerViewController {
-        let types: [UTType] = [.pdf, .plainText, .text, .epub]
+        let types: [UTType] = [.pdf, .plainText, .text, .epub, .rtf, .html]
         let picker = UIDocumentPickerViewController(forOpeningContentTypes: types, asCopy: true)
         picker.delegate = context.coordinator
         return picker

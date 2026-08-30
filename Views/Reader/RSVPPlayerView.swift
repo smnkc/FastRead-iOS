@@ -264,5 +264,9 @@ public struct RSVPPlayerView: View {
                 SettingsView(isModal: true)
             }
         }
+        .onDisappear {
+            engine.pause()
+            engine.updateDocumentProgress()
+        }
     }
 }

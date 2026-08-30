@@ -10,6 +10,9 @@ public struct LibraryView: View {
     @State private var showWebInput: Bool = false
     @State private var showFilePicker: Bool = false
     @State private var showEmptyClipboardModal: Bool = false
+    @State private var showFileErrorModal: Bool = false
+    @State private var errorMessage: String = ""
+    @State private var isLoadingFile: Bool = false
     @State private var showPlayer: Bool = false
     
     private let storageKey = "fastread_library_documents"
@@ -86,7 +89,7 @@ public struct LibraryView: View {
                                     Circle()
                                         .fill(Color(red: 1.0, green: 0.82, blue: 0.85))
                                         .shadow(color: Color.black.opacity(0.06), radius: 8, x: 0, y: 3)
-                                )
+                                 )
                         }
                     }
                     .padding(.horizontal, 24)
@@ -175,6 +178,26 @@ public struct LibraryView: View {
                 }
             }
             
+            // YÜKLEME GÖSTERGESİ
+            if isLoadingFile {
+                Color.black.opacity(0.2)
+                    .ignoresSafeArea()
+                
+                VStack(spacing: 12) {
+                    ProgressView()
+                        .scaleEffect(1.3)
+                    Text("Belge ayrıştırılıyor...")
+                        .font(.system(size: 14, weight: .medium))
+                        .foregroundColor(AppColors.textPrimary)
+                }
+                .padding(24)
+                .background(
+                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                        .fill(Color.white)
+                        .shadow(color: Color.black.opacity(0.1), radius: 16, x: 0, y: 6)
+                )
+            }
+            
             // PANO BOŞ MODALI
             if showEmptyClipboardModal {
                 CustomModalDialog(
@@ -185,11 +208,25 @@ public struct LibraryView: View {
                     showEmptyClipboardModal = false
                 }
             }
+            
+            // DOSYA HATA MODALI
+            if showFileErrorModal {
+                CustomModalDialog(
+                    title: "Dosya Okunamadı",
+                    message: errorMessage,
+                    buttonTitle: "lib_modal_close".localized
+                ) {
+                    showFileErrorModal = false
+                }
+            }
         }
         .onAppear {
             loadDocuments()
         }
         .onReceive(NotificationCenter.default.publisher(for: NSUbiquitousKeyValueStore.didChangeExternallyNotification)) { _ in
+            loadDocuments()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("fastread_documents_updated"))) { _ in
             loadDocuments()
         }
         .sheet(isPresented: $showWebInput) {
@@ -213,12 +250,10 @@ public struct LibraryView: View {
         if let icloudData = NSUbiquitousKeyValueStore.default.data(forKey: storageKey),
            let list = try? JSONDecoder().decode([DocumentItem].self, from: icloudData) {
             self.documents = list
-            // Yerel önbelleği de güncelle
             UserDefaults.standard.set(icloudData, forKey: storageKey)
         } else if let localData = UserDefaults.standard.data(forKey: storageKey),
                   let list = try? JSONDecoder().decode([DocumentItem].self, from: localData) {
             self.documents = list
-            // iCloud'a da yaz
             NSUbiquitousKeyValueStore.default.set(localData, forKey: storageKey)
             NSUbiquitousKeyValueStore.default.synchronize()
         }
@@ -226,7 +261,6 @@ public struct LibraryView: View {
     
     private func saveDocuments() {
         if let data = try? JSONEncoder().encode(documents) {
-            // Hem yerel belleğe hem de iCloud Key-Value Store'a anında kaydet
             UserDefaults.standard.set(data, forKey: storageKey)
             NSUbiquitousKeyValueStore.default.set(data, forKey: storageKey)
             NSUbiquitousKeyValueStore.default.synchronize()
@@ -234,7 +268,11 @@ public struct LibraryView: View {
     }
     
     private func addDocument(_ doc: DocumentItem) {
-        documents.insert(doc, at: 0)
+        if let idx = documents.firstIndex(where: { $0.id == doc.id }) {
+            documents[idx] = doc
+        } else {
+            documents.insert(doc, at: 0)
+        }
         saveDocuments()
         openDocument(doc)
     }
@@ -260,15 +298,18 @@ public struct LibraryView: View {
     }
     
     private func handlePickedFile(url: URL) {
-        if url.pathExtension.lowercased() == "pdf" {
-            if let result = DocumentParser.shared.extractTextFromPDF(at: url) {
-                let doc = DocumentItem(title: result.title, content: result.content, sourceType: .pdf)
-                addDocument(doc)
-            }
-        } else {
-            if let result = DocumentParser.shared.extractTextFromTextFile(at: url) {
-                let doc = DocumentItem(title: result.title, content: result.content, sourceType: .other)
-                addDocument(doc)
+        isLoadingFile = true
+        Task {
+            let parsed = DocumentParser.shared.parseDocument(at: url)
+            await MainActor.run {
+                isLoadingFile = false
+                if let result = parsed {
+                    let doc = DocumentItem(title: result.title, content: result.content, sourceType: result.sourceType)
+                    addDocument(doc)
+                } else {
+                    errorMessage = "Seçilen dosya okunamadı veya metin içeriği bulunamadı. Lütfen dosyanın geçerli bir EPUB, PDF veya TXT dosyası olduğundan emin olun."
+                    showFileErrorModal = true
+                }
             }
         }
     }

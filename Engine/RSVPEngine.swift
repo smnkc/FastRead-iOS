@@ -174,6 +174,7 @@ public class RSVPEngine: ObservableObject {
         isPlaying = false
         timerTask?.cancel()
         timerTask = nil
+        updateDocumentProgress()
     }
     
     public func togglePlayPause() {
@@ -187,6 +188,7 @@ public class RSVPEngine: ObservableObject {
     public func jumpToIndex(_ index: Int) {
         let target = min(max(0, index), max(0, tokens.count - 1))
         self.currentIndex = target
+        updateDocumentProgress()
     }
     
     public func stepForward() {
@@ -198,6 +200,41 @@ public class RSVPEngine: ObservableObject {
     public func stepBackward() {
         if currentIndex > 0 {
             jumpToIndex(currentIndex - 1)
+        }
+    }
+    
+    public func updateDocumentProgress() {
+        guard var doc = currentDocument else { return }
+        doc.currentWordIndex = currentIndex
+        doc.lastReadDate = Date()
+        self.currentDocument = doc
+        Self.saveDocumentProgressToStorage(doc)
+    }
+    
+    public static func saveDocumentProgressToStorage(_ doc: DocumentItem) {
+        let storageKey = "fastread_library_documents"
+        var list: [DocumentItem] = []
+        
+        if let localData = UserDefaults.standard.data(forKey: storageKey),
+           let decoded = try? JSONDecoder().decode([DocumentItem].self, from: localData) {
+            list = decoded
+        } else if let icloudData = NSUbiquitousKeyValueStore.default.data(forKey: storageKey),
+                  let decoded = try? JSONDecoder().decode([DocumentItem].self, from: icloudData) {
+            list = decoded
+        }
+        
+        if let idx = list.firstIndex(where: { $0.id == doc.id }) {
+            list[idx].currentWordIndex = doc.currentWordIndex
+            list[idx].lastReadDate = doc.lastReadDate
+        } else if doc.sourceType != .sample {
+            list.insert(doc, at: 0)
+        }
+        
+        if let data = try? JSONEncoder().encode(list) {
+            UserDefaults.standard.set(data, forKey: storageKey)
+            NSUbiquitousKeyValueStore.default.set(data, forKey: storageKey)
+            NSUbiquitousKeyValueStore.default.synchronize()
+            NotificationCenter.default.post(name: NSNotification.Name("fastread_documents_updated"), object: nil)
         }
     }
     
