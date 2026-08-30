@@ -10,6 +10,15 @@ public enum SentenceEndDelay: String, CaseIterable, Identifiable, Codable {
     
     public var id: String { rawValue }
     
+    public var localizedName: String {
+        switch self {
+        case .none: return "delay_none".localized
+        case .short: return "delay_short".localized
+        case .normal: return "delay_normal".localized
+        case .long: return "delay_long".localized
+        }
+    }
+    
     public var multiplier: Double {
         switch self {
         case .none: return 1.0
@@ -28,6 +37,15 @@ public enum HapticIntensity: String, CaseIterable, Identifiable, Codable {
     case strong = "Güçlü"
     
     public var id: String { rawValue }
+    
+    public var localizedName: String {
+        switch self {
+        case .none: return "haptic_none".localized
+        case .light: return "haptic_light".localized
+        case .medium: return "haptic_medium".localized
+        case .strong: return "haptic_strong".localized
+        }
+    }
 }
 
 /// Kullanıcı Okuyucu Ayarları Deposu
@@ -57,13 +75,13 @@ public class ReaderSettings: ObservableObject {
     
     public var speedCategory: String {
         if wpm < 250 {
-            return "Rahat"
+            return "speed_comfortable".localized
         } else if wpm < 400 {
-            return "Hızlı"
+            return "speed_fast".localized
         } else if wpm < 600 {
-            return "Çok Hızlı"
+            return "speed_very_fast".localized
         } else {
-            return "Turbo"
+            return "speed_turbo".localized
         }
     }
 }

@@ -8,6 +8,15 @@ public enum ThemePreset: String, CaseIterable, Identifiable, Codable {
     case gradient = "Gradyan"
     
     public var id: String { rawValue }
+    
+    public var localizedName: String {
+        switch self {
+        case .classic: return "preset_classic".localized
+        case .book: return "preset_book".localized
+        case .oled: return "preset_oled".localized
+        case .gradient: return "preset_gradient".localized
+        }
+    }
 }
 
 /// Arka Plan Seçenekleri
@@ -19,6 +28,16 @@ public enum ReaderBackground: String, CaseIterable, Identifiable, Codable {
     case gradient = "Gradyan"
     
     public var id: String { rawValue }
+    
+    public var localizedName: String {
+        switch self {
+        case .highContrast: return "bg_high_contrast".localized
+        case .grey: return "bg_grey".localized
+        case .warmGrey: return "bg_warm_grey".localized
+        case .oledBlack: return "bg_oled_black".localized
+        case .gradient: return "bg_gradient".localized
+        }
+    }
     
     public var color: Color {
         switch self {
@@ -48,6 +67,14 @@ public enum TextContrast: String, CaseIterable, Identifiable, Codable {
     
     public var id: String { rawValue }
     
+    public var localizedName: String {
+        switch self {
+        case .prominent: return "contrast_prominent".localized
+        case .normal: return "contrast_normal".localized
+        case .subtle: return "contrast_subtle".localized
+        }
+    }
+    
     public var opacity: Double {
         switch self {
         case .prominent: return 1.0
@@ -65,6 +92,14 @@ public enum GuideVisibility: String, CaseIterable, Identifiable, Codable {
     
     public var id: String { rawValue }
     
+    public var localizedName: String {
+        switch self {
+        case .normal: return "guide_normal".localized
+        case .subtle: return "guide_subtle".localized
+        case .hidden: return "guide_hidden".localized
+        }
+    }
+    
     public var opacity: Double {
         switch self {
         case .normal: return 0.8
@@ -81,6 +116,14 @@ public enum TextSizePreference: String, CaseIterable, Identifiable, Codable {
     case large = "Büyük"
     
     public var id: String { rawValue }
+    
+    public var localizedName: String {
+        switch self {
+        case .small: return "size_small".localized
+        case .normal: return "size_normal".localized
+        case .large: return "size_large".localized
+        }
+    }
     
     public var fontSize: CGFloat {
         switch self {

@@ -39,7 +39,7 @@ public struct SettingsView: View {
                             }
                         }
                         
-                        Text("Ayarlar")
+                        Text("settings_title".localized)
                             .font(.system(size: 32, weight: .bold))
                             .foregroundColor(AppColors.textPrimary)
                         
@@ -53,7 +53,7 @@ public struct SettingsView: View {
                     VStack(spacing: 24) {
                         // 1. OKUYUCU GRUBU (Ekran 20)
                         VStack(alignment: .leading, spacing: 10) {
-                            Text("Okuyucu")
+                            Text("sec_reader".localized)
                                 .font(.system(size: 13, weight: .semibold))
                                 .foregroundColor(AppColors.textSecondary)
                                 .textCase(.uppercase)
@@ -64,8 +64,8 @@ public struct SettingsView: View {
                                 NavigationLink(destination: ReaderTimingView()) {
                                     SettingsNavigationRow(
                                         icon: "speedometer",
-                                        title: "Zamanlama",
-                                        subtitle: "Okuyucunuzun zamanlamasını özelleştirin."
+                                        title: "row_timing_title".localized,
+                                        subtitle: "row_timing_desc".localized
                                     )
                                 }
                                 
@@ -75,8 +75,8 @@ public struct SettingsView: View {
                                 NavigationLink(destination: ReaderAppearanceView()) {
                                     SettingsNavigationRow(
                                         icon: "sparkles",
-                                        title: "Görünüm",
-                                        subtitle: "Okuyucunuzun görünümünü özelleştirin."
+                                        title: "row_appearance_title".localized,
+                                        subtitle: "row_appearance_desc".localized
                                     )
                                 }
                                 
@@ -86,8 +86,8 @@ public struct SettingsView: View {
                                 NavigationLink(destination: ReaderHapticsView()) {
                                     SettingsNavigationRow(
                                         icon: "waveform",
-                                        title: "His",
-                                        subtitle: "Okuyucunuzun hissini özelleştirin."
+                                        title: "row_haptics_title".localized,
+                                        subtitle: "row_haptics_desc".localized
                                     )
                                 }
                             }
@@ -102,7 +102,7 @@ public struct SettingsView: View {
                         
                         // 2. PAYLAŞ GRUBU (Ekran 16)
                         VStack(alignment: .leading, spacing: 10) {
-                            Text("Paylaş")
+                            Text("sec_share".localized)
                                 .font(.system(size: 13, weight: .semibold))
                                 .foregroundColor(AppColors.textSecondary)
                                 .textCase(.uppercase)
@@ -118,12 +118,12 @@ public struct SettingsView: View {
                                         .frame(width: 28)
                                     
                                     VStack(alignment: .leading, spacing: 3) {
-                                        Text("Paylaş")
+                                        Text("row_share_title".localized)
                                             .font(.system(size: 16, weight: .semibold))
                                             .foregroundColor(AppColors.textPrimary)
                                             .frame(maxWidth: .infinity, alignment: .leading)
                                         
-                                        Text("FastRead hoşunuza gidiyor mu? Bir arkadaşınızla paylaşın.")
+                                        Text("row_share_desc".localized)
                                             .font(.system(size: 13, weight: .regular))
                                             .foregroundColor(AppColors.textSecondary)
                                             .multilineTextAlignment(.leading)
@@ -149,7 +149,7 @@ public struct SettingsView: View {
                         
                         // 3. HAKKINDA GRUBU (Ekran 16)
                         VStack(alignment: .leading, spacing: 10) {
-                            Text("Hakkında")
+                            Text("sec_about".localized)
                                 .font(.system(size: 13, weight: .semibold))
                                 .foregroundColor(AppColors.textSecondary)
                                 .textCase(.uppercase)
@@ -163,12 +163,12 @@ public struct SettingsView: View {
                                         .frame(width: 28)
                                     
                                     VStack(alignment: .leading, spacing: 3) {
-                                        Text("Yazar")
+                                        Text("row_author_title".localized)
                                             .font(.system(size: 16, weight: .semibold))
                                             .foregroundColor(AppColors.textPrimary)
                                             .frame(maxWidth: .infinity, alignment: .leading)
                                         
-                                        Text("Osman Akça tarafından ❤️ ile yapıldı.")
+                                        Text("author_with_heart".localized)
                                             .font(.system(size: 13, weight: .regular))
                                             .foregroundColor(AppColors.textSecondary)
                                             .multilineTextAlignment(.leading)
@@ -188,7 +188,7 @@ public struct SettingsView: View {
                                         .frame(width: 28)
                                     
                                     VStack(alignment: .leading, spacing: 3) {
-                                        Text("Sürüm")
+                                        Text("row_version_title".localized)
                                             .font(.system(size: 16, weight: .semibold))
                                             .foregroundColor(AppColors.textPrimary)
                                             .frame(maxWidth: .infinity, alignment: .leading)

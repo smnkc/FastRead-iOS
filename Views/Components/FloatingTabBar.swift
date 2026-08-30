@@ -8,9 +8,9 @@ public enum AppTab: Int, CaseIterable {
     
     public var title: String {
         switch self {
-        case .library: return "Kitaplık"
-        case .reader: return "Oku"
-        case .settings: return "Ayarlar"
+        case .library: return "tab_library".localized
+        case .reader: return "tab_read".localized
+        case .settings: return "tab_settings".localized
         }
     }
     

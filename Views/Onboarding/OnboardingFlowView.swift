@@ -54,7 +54,7 @@ public struct OnboardingFlowView: View {
                                 }
                                 .font(.system(size: 32, weight: .bold, design: .serif))
                                 
-                                Text("Bilimsel Hızlı Okuma")
+                                Text("app_subtitle".localized)
                                     .font(.system(size: 15, weight: .medium))
                                     .foregroundColor(AppColors.textSecondary)
                             }
@@ -65,29 +65,29 @@ public struct OnboardingFlowView: View {
                             FeatureRowCard(
                                 icon: "bolt.fill",
                                 iconColor: .orange,
-                                title: "RSVP Hızlı Okuma",
-                                description: "Göz hareketlerini sıfırlayarak anlama kaybı olmadan 3 kata kadar daha hızlı okuyun."
+                                title: "feat_rsvp_title".localized,
+                                description: "feat_rsvp_desc".localized
                             )
                             
                             FeatureRowCard(
                                 icon: "scope",
                                 iconColor: AppColors.orpRed,
-                                title: "Akıllı Odak Noktası (ORP)",
-                                description: "Her kelimenin en uygun tanıma harfine milimetrik odaklanarak beyninizi hızlandırın."
+                                title: "feat_orp_title".localized,
+                                description: "feat_orp_desc".localized
                             )
                             
                             FeatureRowCard(
                                 icon: "doc.text.fill",
                                 iconColor: .blue,
-                                title: "Geniş Belge Desteği",
-                                description: "PDF kitapları, web makalelerini veya panodaki metinleri tek dokunuşla içe aktarın."
+                                title: "feat_doc_title".localized,
+                                description: "feat_doc_desc".localized
                             )
                             
                             FeatureRowCard(
                                 icon: "icloud.fill",
                                 iconColor: .teal,
-                                title: "Otomatik iCloud Yedekleme",
-                                description: "Belgeleriniz ve okuma ilerlemeniz cihazınızda ve iCloud hesabınızda güvenle saklanır."
+                                title: "feat_cloud_title".localized,
+                                description: "feat_cloud_desc".localized
                             )
                         }
                         .padding(.horizontal, 20)
@@ -98,7 +98,7 @@ public struct OnboardingFlowView: View {
                 // 3. ALT BAŞLAMA AKSİYON KARTI
                 VStack(spacing: 12) {
                     CustomPillButton(
-                        title: "Hemen Başla",
+                        title: "btn_get_started".localized,
                         icon: "arrow.right",
                         backgroundColor: AppColors.orpRed,
                         foregroundColor: Color.white,
@@ -110,7 +110,7 @@ public struct OnboardingFlowView: View {
                         }
                     }
                     
-                    Text("Osman Akça tarafından geliştirildi")
+                    Text("developed_by".localized)
                         .font(.system(size: 12, weight: .regular))
                         .foregroundColor(AppColors.textTertiary)
                 }

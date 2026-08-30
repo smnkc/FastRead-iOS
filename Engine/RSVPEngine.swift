@@ -158,24 +158,7 @@ public class RSVPEngine: ObservableObject {
     }
     
     public func loadSampleText() {
-        let sample = """
-        Ekran aydınlanır ve senden hiçbir şey istenmez.
-        Kurulum yok, bağlılık yok, sadece kelimeler.
-        
-        Daha hızlı okumak, daha az önemsemek demek değildir.
-        Beynine daha çok güvenmek demektir.
-        
-        Beynin örüntüler konusunda çok iyidir.
-        Sandığından daha iyi.
-        
-        Okumak genellikle çaba ister.
-        Bu istemez.
-        
-        Kelimeler gelir.
-        Kelimeler gider.
-        Oyalanmazlar.
-        """
-        loadText(sample)
+        loadText(L10n.sampleText)
     }
     
     public func play() {

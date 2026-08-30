@@ -84,7 +84,7 @@ public struct RSVPPlayerView: View {
                                 isZenMode = true
                             }
                         }) {
-                            Label("Arayüzü Gizle (Odak Modu)", systemImage: "eye.slash")
+                            Label("menu_zen_mode".localized, systemImage: "eye.slash")
                         }
                         
                         Divider()
@@ -92,13 +92,13 @@ public struct RSVPPlayerView: View {
                         Button(action: {
                             showSpeedPicker = true
                         }) {
-                            Label("Hız", systemImage: "speedometer")
+                            Label("menu_speed".localized, systemImage: "speedometer")
                         }
                         
                         Button(action: {
                             showSettingsSheet = true
                         }) {
-                            Label("Ayarlar", systemImage: "gearshape")
+                            Label("menu_settings".localized, systemImage: "gearshape")
                         }
                     } label: {
                         Image(systemName: "ellipsis")
@@ -119,11 +119,11 @@ public struct RSVPPlayerView: View {
                 VStack(alignment: .leading, spacing: 6) {
                     HStack {
                         VStack(alignment: .leading, spacing: 4) {
-                            Text(engine.isPlaying ? "Dokunarak duraklatın" : "Dokunarak oynatın")
+                            Text(engine.isPlaying ? "tap_to_pause".localized : "tap_to_play".localized)
                                 .font(AppFonts.monoTitle(size: 16))
                                 .foregroundColor(AppColors.textPrimary)
                             
-                            Text(engine.isPlaying ? "Okuyucuda herhangi bir yere dokunarak duraklatın." : "Okuyucuda herhangi bir yere dokunarak oynatın.")
+                            Text(engine.isPlaying ? "tap_to_pause_desc".localized : "tap_to_play_desc".localized)
                                 .font(AppFonts.monoBody(size: 13))
                                 .foregroundColor(AppColors.textSecondary)
                         }
@@ -173,7 +173,7 @@ public struct RSVPPlayerView: View {
                     HStack(spacing: 12) {
                         // Gezgin Butonu
                         CustomPillButton(
-                            title: "Gezgin",
+                            title: "btn_navigator".localized,
                             icon: "text.justify",
                             backgroundColor: AppColors.subtleGray,
                             foregroundColor: AppColors.textPrimary,
@@ -186,7 +186,7 @@ public struct RSVPPlayerView: View {
                         
                         // Oynat / Duraklat Butonu
                         CustomPillButton(
-                            title: engine.isPlaying ? "Duraklat" : "Oynat",
+                            title: engine.isPlaying ? "btn_pause".localized : "btn_play".localized,
                             icon: engine.isPlaying ? "pause.fill" : "play.fill",
                             backgroundColor: AppColors.subtleGray,
                             foregroundColor: AppColors.textPrimary,

@@ -40,7 +40,7 @@ public struct LibraryView: View {
                         .ignoresSafeArea(edges: .top)
                     
                     HStack(alignment: .center) {
-                        Text("Kitaplık")
+                        Text("lib_title".localized)
                             .font(.system(size: 34, weight: .bold))
                             .foregroundColor(AppColors.textPrimary)
                         
@@ -51,13 +51,13 @@ public struct LibraryView: View {
                             Button(action: {
                                 handlePasteboardImport()
                             }) {
-                                Label("Yapıştır", systemImage: "doc.on.doc")
+                                Label("lib_add_paste".localized, systemImage: "doc.on.doc")
                             }
                             
                             Button(action: {
                                 showWebInput = true
                             }) {
-                                Label("Web bağlantısı", systemImage: "link")
+                                Label("lib_add_web".localized, systemImage: "link")
                             }
                             
                             Button(action: {
@@ -75,7 +75,7 @@ public struct LibraryView: View {
                             Button(action: {
                                 showFilePicker = true
                             }) {
-                                Label("Diğer", systemImage: "questionmark.folder")
+                                Label("TXT", systemImage: "doc.text")
                             }
                         } label: {
                             Image(systemName: "plus")
@@ -99,7 +99,7 @@ public struct LibraryView: View {
                         .foregroundColor(AppColors.textTertiary)
                         .font(.system(size: 16, weight: .medium))
                     
-                    TextField("Arayın", text: $searchText)
+                    TextField("lib_search_placeholder".localized, text: $searchText)
                         .font(.system(size: 16, weight: .regular))
                     
                     if !searchText.isEmpty {
@@ -121,22 +121,6 @@ public struct LibraryView: View {
                 
                 ScrollView {
                     VStack(spacing: 16) {
-                        // BİLGİLENDİRME KARTI (Ekran 10)
-                        VStack(alignment: .leading, spacing: 8) {
-                            Text("Oturumlar arasında ilerlemeyi korumak için belgeler ekleyin; böylece döndüğünüzde kaldığınız yerden devam edebilirsiniz.")
-                                .font(.system(size: 15, weight: .regular))
-                                .foregroundColor(AppColors.textSecondary)
-                                .lineSpacing(4)
-                        }
-                        .padding(20)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .background(
-                            RoundedRectangle(cornerRadius: 24, style: .continuous)
-                                .fill(Color.white)
-                                .shadow(color: Color.black.opacity(0.04), radius: 12, x: 0, y: 4)
-                        )
-                        .padding(.horizontal, 20)
-                        
                         // BOŞ DURUM (EMPTY STATE) VEYA BELGE LİSTESİ
                         if filteredDocuments.isEmpty {
                             // "Belge yok" Kartı (Ekran 10)
@@ -146,11 +130,11 @@ public struct LibraryView: View {
                                     .foregroundColor(AppColors.textPrimary.opacity(0.75))
                                 
                                 VStack(alignment: .leading, spacing: 4) {
-                                    Text("Belge yok")
+                                    Text("lib_empty_title".localized)
                                         .font(.system(size: 16, weight: .bold))
                                         .foregroundColor(AppColors.textPrimary)
                                     
-                                    Text("Henüz hiç belge eklememişsiniz gibi görünüyor!")
+                                    Text("lib_empty_desc".localized)
                                         .font(.system(size: 13, weight: .regular))
                                         .foregroundColor(AppColors.textSecondary)
                                         .lineLimit(2)
@@ -194,9 +178,9 @@ public struct LibraryView: View {
             // PANO BOŞ MODALI
             if showEmptyClipboardModal {
                 CustomModalDialog(
-                    title: "İçerik bulunamadı",
-                    message: "Panonuzda hiçbir şey bulunamadı. Lütfen bir şey kopyalayıp tekrar deneyin.",
-                    buttonTitle: "Kapat"
+                    title: "lib_clipboard_empty_title".localized,
+                    message: "lib_clipboard_empty_desc".localized,
+                    buttonTitle: "lib_modal_close".localized
                 ) {
                     showEmptyClipboardModal = false
                 }

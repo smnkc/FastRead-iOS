@@ -32,7 +32,7 @@ public struct SpeedPickerSheet: View {
                 
                 Spacer()
                 
-                Text("Okuma hızı")
+                Text("speed_title".localized)
                     .font(.system(size: 18, weight: .bold))
                     .foregroundColor(AppColors.textPrimary)
                 
@@ -47,9 +47,9 @@ public struct SpeedPickerSheet: View {
             Spacer()
             
             // Hız Seçim Çarkı / Listesi
-            Picker("Okuma Hızı", selection: $selectedWPM) {
+            Picker("speed_title".localized, selection: $selectedWPM) {
                 ForEach(speeds, id: \.self) { wpm in
-                    Text("\(wpm) kelime/dk")
+                    Text("\(wpm) WPM")
                         .font(.system(size: 20, weight: selectedWPM == wpm ? .semibold : .regular))
                         .foregroundColor(selectedWPM == wpm ? AppColors.textPrimary : AppColors.textTertiary)
                         .tag(wpm)
@@ -63,7 +63,7 @@ public struct SpeedPickerSheet: View {
             
             // Kaydet Butonu
             CustomPillButton(
-                title: "Kaydet",
+                title: "web_sheet_add".localized == "Ekle" ? "Kaydet" : "Save",
                 backgroundColor: AppColors.buttonPrimary,
                 foregroundColor: AppColors.textPrimary,
                 isFullWidth: true,

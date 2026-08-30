@@ -45,7 +45,7 @@ public struct ReaderTimingView: View {
                 
                 // BAŞLIK
                 HStack {
-                    Text("Okuyucu zamanlaması")
+                    Text("timing_title".localized)
                         .font(.system(size: 28, weight: .bold))
                         .foregroundColor(AppColors.textPrimary)
                     Spacer()
@@ -56,7 +56,7 @@ public struct ReaderTimingView: View {
                 
                 // ZAMANLAMA AYARLARI KARTI
                 VStack(alignment: .leading, spacing: 18) {
-                    Text("Zamanlama")
+                    Text("sec_timing".localized)
                         .font(.system(size: 13, weight: .semibold))
                         .foregroundColor(AppColors.textSecondary)
                         .textCase(.uppercase)
@@ -71,24 +71,15 @@ public struct ReaderTimingView: View {
                                     .font(.system(size: 18, weight: .medium))
                                     .foregroundColor(AppColors.textPrimary)
                                 
-                                Text("Hız")
+                                Text("timing_speed_title".localized)
                                     .font(.system(size: 16, weight: .medium))
                                     .foregroundColor(AppColors.textPrimary)
                                 
                                 Spacer()
                                 
                                 HStack(spacing: 6) {
-                                    Text("\(settings.wpm) kelime/dk")
+                                    Text("\(settings.wpm) WPM")
                                         .font(.system(size: 13, weight: .semibold))
-                                        .padding(.horizontal, 10)
-                                        .padding(.vertical, 5)
-                                        .background(
-                                            Capsule()
-                                                .fill(AppColors.subtleGray)
-                                        )
-                                    
-                                    Text(settings.speedCategory)
-                                        .font(.system(size: 13, weight: .medium))
                                         .padding(.horizontal, 10)
                                         .padding(.vertical, 5)
                                         .background(
@@ -114,12 +105,12 @@ public struct ReaderTimingView: View {
                                     .font(.system(size: 18, weight: .medium))
                                     .foregroundColor(AppColors.textPrimary)
                                 
-                                Text("Cümle sonu beklemesi")
+                                Text("timing_sentence_delay_title".localized)
                                     .font(.system(size: 16, weight: .medium))
                                     .foregroundColor(AppColors.textPrimary)
                             }
                             
-                            Text("Her cümlenin son kelimesinde ne kadar duraklanacağı.")
+                            Text("timing_sentence_delay_desc".localized)
                                 .font(.system(size: 13, weight: .regular))
                                 .foregroundColor(AppColors.textSecondary)
                                 .padding(.leading, 32)

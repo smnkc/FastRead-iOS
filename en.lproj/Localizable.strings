@@ -1,0 +1,144 @@
+/* English Localization */
+
+/* Tabs */
+"tab_library" = "Library";
+"tab_read" = "Read";
+"tab_settings" = "Settings";
+
+/* Splash & Branding */
+"app_subtitle" = "Scientific Speed Reading";
+"author_credit" = "Osman Akça";
+"author_with_heart" = "Crafted with ❤️ by Osman Akça.";
+"developed_by" = "Developed by Osman Akça";
+
+/* Welcome / Onboarding */
+"welcome_title" = "Welcome to FastRead";
+"welcome_subtitle" = "Experience rapid, focused, and comfortable reading with RSVP technology.";
+"feat_rsvp_title" = "RSVP Speed Reading";
+"feat_rsvp_desc" = "Read up to 3x faster without loss of comprehension by eliminating eye movements.";
+"feat_orp_title" = "Optimal Recognition Point (ORP)";
+"feat_orp_desc" = "Accelerate reading speed by locking onto each word's optimal focal letter.";
+"feat_doc_title" = "Broad Document Support";
+"feat_doc_desc" = "Import PDF books, web articles, or clipboard text with a single tap.";
+"feat_cloud_title" = "Automatic iCloud Backup";
+"feat_cloud_desc" = "Your documents and reading progress are safely synced across your iCloud account.";
+"btn_get_started" = "Get Started";
+
+/* Reader Controls & Status */
+"tap_to_play" = "Tap to play";
+"tap_to_pause" = "Tap to pause";
+"tap_to_play_desc" = "Tap anywhere in the reader to play.";
+"tap_to_pause_desc" = "Tap anywhere in the reader to pause.";
+"btn_navigator" = "Navigator";
+"btn_play" = "Play";
+"btn_pause" = "Pause";
+"menu_speed" = "Speed";
+"menu_settings" = "Settings";
+"menu_zen_mode" = "Hide UI (Zen Mode)";
+
+/* Content Navigator */
+"nav_title" = "Content Navigator";
+"nav_selected_word" = "Selected word: \"%@\" (#%d/%d)";
+"nav_jump_here" = "Jump here";
+
+/* Speed Picker */
+"speed_title" = "Reading Speed";
+"speed_unit" = "WPM (Words Per Minute)";
+"speed_comfortable" = "Comfortable";
+"speed_fast" = "Fast";
+"speed_very_fast" = "Very Fast";
+"speed_turbo" = "Turbo";
+
+/* Library */
+"lib_title" = "Library";
+"lib_search_placeholder" = "Search";
+"lib_empty_title" = "No documents";
+"lib_empty_desc" = "Looks like you haven't added any documents yet!";
+"lib_add_paste" = "Paste Text";
+"lib_add_web" = "Web Link";
+"lib_add_file" = "Choose File (PDF, TXT)";
+"lib_delete" = "Delete";
+"lib_words_count" = "%d words";
+"lib_clipboard_empty_title" = "No content found";
+"lib_clipboard_empty_desc" = "Nothing found in your clipboard. Please copy something and try again.";
+"lib_modal_close" = "Close";
+
+/* Web Link Sheet */
+"web_sheet_title" = "Add Web Link";
+"web_sheet_desc" = "Paste the URL of the article or web page you want to read.";
+"web_sheet_placeholder" = "https://example.com/article";
+"web_sheet_cancel" = "Cancel";
+"web_sheet_add" = "Add";
+
+/* Settings Main */
+"settings_title" = "Settings";
+"sec_reader" = "Reader";
+"row_timing_title" = "Timing";
+"row_timing_desc" = "Customize your reader's timing.";
+"row_appearance_title" = "Appearance";
+"row_appearance_desc" = "Customize your reader's appearance.";
+"row_haptics_title" = "Haptics";
+"row_haptics_desc" = "Customize your reader's haptic feel.";
+"sec_share" = "Share";
+"row_share_title" = "Share";
+"row_share_desc" = "Enjoying FastRead? Share with a friend.";
+"sec_about" = "About";
+"row_author_title" = "Author";
+"row_version_title" = "Version";
+
+/* Appearance Settings */
+"appr_title" = "Reader Appearance";
+"appr_preview" = "PREVIEW";
+"appr_presets_title" = "Presets";
+"appr_presets_desc" = "Not sure what to choose?\nUse one of our recommended presets.";
+"preset_classic" = "Classic";
+"preset_book" = "Book";
+"preset_oled" = "OLED";
+"preset_gradient" = "Gradient";
+"appr_section_appearance" = "Appearance";
+"appr_bg_title" = "Background";
+"bg_high_contrast" = "High contrast";
+"bg_grey" = "Grey";
+"bg_warm_grey" = "Grey (warm)";
+"bg_oled_black" = "OLED Black";
+"bg_gradient" = "Gradient";
+"appr_text_color_title" = "Text color";
+"contrast_prominent" = "Prominent";
+"contrast_normal" = "Normal";
+"contrast_subtle" = "Subtle";
+"appr_orp_color_title" = "Focal letter color";
+"appr_guide_vis_title" = "Guide visibility";
+"guide_normal" = "Normal";
+"guide_subtle" = "Subtle";
+"guide_hidden" = "Hidden";
+"appr_text_size_title" = "Text size";
+"size_small" = "Small";
+"size_normal" = "Normal";
+"size_large" = "Large";
+"appr_font_title" = "Font family";
+
+/* Timing Settings */
+"timing_title" = "Reader Timing";
+"timing_info" = "Achieve a fluid reading rhythm with speed and pause adjustments.";
+"sec_timing" = "Timing";
+"timing_speed_title" = "Speed";
+"timing_wpm_unit" = "words per minute";
+"timing_sentence_delay_title" = "Sentence end delay";
+"timing_sentence_delay_desc" = "Better comprehend text with a brief pause at sentence ends.";
+"delay_none" = "None";
+"delay_short" = "Short";
+"delay_normal" = "Normal";
+"delay_long" = "Long";
+
+/* Haptics Settings */
+"haptics_title" = "Reader Haptics";
+"haptics_info" = "FastRead provides tactile feedback while reading to boost engagement and focus.";
+"sec_haptics" = "Haptics";
+"haptic_word_title" = "Word";
+"haptic_word_desc" = "Tactile feedback at the start of each word.";
+"haptic_sentence_title" = "Sentence end";
+"haptic_sentence_desc" = "Tactile feedback at the end of each sentence.";
+"haptic_none" = "None";
+"haptic_light" = "Light";
+"haptic_medium" = "Medium";
+"haptic_strong" = "Strong";

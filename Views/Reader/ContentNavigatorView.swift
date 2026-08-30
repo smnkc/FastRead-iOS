@@ -38,7 +38,7 @@ public struct ContentNavigatorView: View {
                 
                 Spacer()
                 
-                Text("İçerik gezgini")
+                Text("nav_title".localized)
                     .font(.system(size: 18, weight: .bold))
                     .foregroundColor(AppColors.textPrimary)
                 
@@ -85,13 +85,13 @@ public struct ContentNavigatorView: View {
             // ALT "BURAYA ATLA" AKSİYON KARTI
             VStack(spacing: 8) {
                 if !selectedWordText.isEmpty {
-                    Text("Seçilen kelime: \"\(selectedWordText)\" (#\(selectedIndex + 1)/\(engine.totalWords))")
+                    Text(L10n.tr("nav_selected_word", selectedWordText, selectedIndex + 1, engine.totalWords))
                         .font(.system(size: 13, weight: .medium, design: .monospaced))
                         .foregroundColor(AppColors.textSecondary)
                 }
                 
                 CustomPillButton(
-                    title: "Buraya atla",
+                    title: "nav_jump_here".localized,
                     icon: "scope",
                     backgroundColor: AppColors.buttonPrimary,
                     foregroundColor: AppColors.textPrimary,

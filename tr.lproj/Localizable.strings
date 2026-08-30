@@ -1,0 +1,144 @@
+/* Turkish Localization */
+
+/* Tabs */
+"tab_library" = "Kitaplık";
+"tab_read" = "Oku";
+"tab_settings" = "Ayarlar";
+
+/* Splash & Branding */
+"app_subtitle" = "Bilimsel Hızlı Okuma";
+"author_credit" = "Osman Akça";
+"author_with_heart" = "Osman Akça tarafından ❤️ ile yapıldı.";
+"developed_by" = "Osman Akça tarafından geliştirildi";
+
+/* Welcome / Onboarding */
+"welcome_title" = "FastRead'e Hoş Geldiniz";
+"welcome_subtitle" = "Bilimsel RSVP teknolojisi ile hızlı, odaklı ve konforlu okuma.";
+"feat_rsvp_title" = "RSVP Hızlı Okuma";
+"feat_rsvp_desc" = "Göz hareketlerini sıfırlayarak anlama kaybı olmadan 3 kata kadar daha hızlı okuyun.";
+"feat_orp_title" = "Akıllı Odak Noktası (ORP)";
+"feat_orp_desc" = "Her kelimenin en uygun tanıma harfine milimetrik odaklanarak beyninizi hızlandırın.";
+"feat_doc_title" = "Geniş Belge Desteği";
+"feat_doc_desc" = "PDF kitapları, web makalelerini veya panodaki metinleri tek dokunuşla içe aktarın.";
+"feat_cloud_title" = "Otomatik iCloud Yedekleme";
+"feat_cloud_desc" = "Belgeleriniz ve okuma ilerlemeniz cihazınızda ve iCloud hesabınızda güvenle saklanır.";
+"btn_get_started" = "Hemen Başla";
+
+/* Reader Controls & Status */
+"tap_to_play" = "Dokunarak oynatın";
+"tap_to_pause" = "Dokunarak duraklatın";
+"tap_to_play_desc" = "Okuyucuda herhangi bir yere dokunarak oynatın.";
+"tap_to_pause_desc" = "Okuyucuda herhangi bir yere dokunarak duraklatın.";
+"btn_navigator" = "Gezgin";
+"btn_play" = "Oynat";
+"btn_pause" = "Duraklat";
+"menu_speed" = "Hız";
+"menu_settings" = "Ayarlar";
+"menu_zen_mode" = "Arayüzü Gizle (Odak Modu)";
+
+/* Content Navigator */
+"nav_title" = "İçerik gezgini";
+"nav_selected_word" = "Seçilen kelime: \"%@\" (#%d/%d)";
+"nav_jump_here" = "Buraya atla";
+
+/* Speed Picker */
+"speed_title" = "Okuma Hızı";
+"speed_unit" = "WPM (Dakikada Kelime)";
+"speed_comfortable" = "Rahat";
+"speed_fast" = "Hızlı";
+"speed_very_fast" = "Çok Hızlı";
+"speed_turbo" = "Turbo";
+
+/* Library */
+"lib_title" = "Kitaplık";
+"lib_search_placeholder" = "Arama";
+"lib_empty_title" = "Belge yok";
+"lib_empty_desc" = "Henüz hiç belge eklememişsiniz gibi görünüyor!";
+"lib_add_paste" = "Metin Yapıştır";
+"lib_add_web" = "Web Bağlantısı";
+"lib_add_file" = "Dosya Seç (PDF, TXT)";
+"lib_delete" = "Sil";
+"lib_words_count" = "%d kelime";
+"lib_clipboard_empty_title" = "İçerik bulunamadı";
+"lib_clipboard_empty_desc" = "Panonuzda hiçbir şey bulunamadı. Lütfen bir şey kopyalayıp tekrar deneyin.";
+"lib_modal_close" = "Kapat";
+
+/* Web Link Sheet */
+"web_sheet_title" = "Web Bağlantısı Ekle";
+"web_sheet_desc" = "İçeriğini okumak istediğiniz makale veya web sayfasının adresini yapıştırın.";
+"web_sheet_placeholder" = "https://example.com/makale";
+"web_sheet_cancel" = "İptal";
+"web_sheet_add" = "Ekle";
+
+/* Settings Main */
+"settings_title" = "Ayarlar";
+"sec_reader" = "Okuyucu";
+"row_timing_title" = "Zamanlama";
+"row_timing_desc" = "Okuyucunuzun zamanlamasını özelleştirin.";
+"row_appearance_title" = "Görünüm";
+"row_appearance_desc" = "Okuyucunuzun görünümünü özelleştirin.";
+"row_haptics_title" = "His";
+"row_haptics_desc" = "Okuyucunuzun hissini özelleştirin.";
+"sec_share" = "Paylaş";
+"row_share_title" = "Paylaş";
+"row_share_desc" = "FastRead hoşunuza gidiyor mu? Bir arkadaşınızla paylaşın.";
+"sec_about" = "Hakkında";
+"row_author_title" = "Yazar";
+"row_version_title" = "Sürüm";
+
+/* Appearance Settings */
+"appr_title" = "Okuyucu görünümü";
+"appr_preview" = "ÖNİZLEME";
+"appr_presets_title" = "Ön ayarlar";
+"appr_presets_desc" = "Ne seçeceğinizden emin değil misiniz?\nÖnerdiğimiz ön ayarlardan birini kullanın.";
+"preset_classic" = "Klasik";
+"preset_book" = "Kitap";
+"preset_oled" = "OLED";
+"preset_gradient" = "Gradyan";
+"appr_section_appearance" = "Görünüm";
+"appr_bg_title" = "Arka plan";
+"bg_high_contrast" = "Yüksek kontrast";
+"bg_grey" = "Gri";
+"bg_warm_grey" = "Gri (sıcak)";
+"bg_oled_black" = "OLED Siyah";
+"bg_gradient" = "Gradyan";
+"appr_text_color_title" = "Metin rengi";
+"contrast_prominent" = "Belirgin";
+"contrast_normal" = "Normal";
+"contrast_subtle" = "Hafif";
+"appr_orp_color_title" = "Odak harfi rengi";
+"appr_guide_vis_title" = "Kılavuz belirginliği";
+"guide_normal" = "Normal";
+"guide_subtle" = "Hafif";
+"guide_hidden" = "Gizli";
+"appr_text_size_title" = "Metin boyutu";
+"size_small" = "Küçük";
+"size_normal" = "Normal";
+"size_large" = "Büyük";
+"appr_font_title" = "Yazı tipi";
+
+/* Timing Settings */
+"timing_title" = "Okuyucu zamanlaması";
+"timing_info" = "Okuma hızı ve duraklamalar ile metinler arasında akıcı bir ritim yakalayın.";
+"sec_timing" = "Zamanlama";
+"timing_speed_title" = "Hız";
+"timing_wpm_unit" = "dakikada kelime";
+"timing_sentence_delay_title" = "Cümle sonu gecikmesi";
+"timing_sentence_delay_desc" = "Cümle sonlarında kısa bir duraklama ile metni daha iyi kavrayın.";
+"delay_none" = "Yok";
+"delay_short" = "Kısa";
+"delay_normal" = "Normal";
+"delay_long" = "Uzun";
+
+/* Haptics Settings */
+"haptics_title" = "Okuyucu hissi";
+"haptics_info" = "FastRead, okurken dokunsal geri bildirim verilmesini sağlar. Bu, kavrayışı artırmaya ve ilgiyi sürdürmeye yardımcı olur.";
+"sec_haptics" = "His";
+"haptic_word_title" = "Kelime";
+"haptic_word_desc" = "Her kelimenin başında verilecek dokunsal geri bildirim.";
+"haptic_sentence_title" = "Cümle sonu";
+"haptic_sentence_desc" = "Her cümlenin sonunda verilecek dokunsal geri bildirim.";
+"haptic_none" = "Yok";
+"haptic_light" = "Zayıf";
+"haptic_medium" = "Orta";
+"haptic_strong" = "Güçlü";

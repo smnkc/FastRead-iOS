@@ -16,20 +16,20 @@ public struct WebLinkInputSheet: View {
     public var body: some View {
         VStack(spacing: 20) {
             HStack {
-                Button("İptal") {
+                Button("web_sheet_cancel".localized) {
                     dismiss()
                 }
                 .foregroundColor(AppColors.textSecondary)
                 
                 Spacer()
                 
-                Text("Web Bağlantısı Ekle")
+                Text("web_sheet_title".localized)
                     .font(.system(size: 17, weight: .bold))
                     .foregroundColor(AppColors.textPrimary)
                 
                 Spacer()
                 
-                Button("Ekle") {
+                Button("web_sheet_add".localized) {
                     fetchURL()
                 }
                 .font(.system(size: 17, weight: .bold))
@@ -40,7 +40,7 @@ public struct WebLinkInputSheet: View {
             .padding(.top, 20)
             
             VStack(alignment: .leading, spacing: 8) {
-                Text("Web Sayfası Adresi (URL)")
+                Text("web_sheet_desc".localized)
                     .font(.system(size: 14, weight: .medium))
                     .foregroundColor(AppColors.textSecondary)
                 
@@ -48,7 +48,7 @@ public struct WebLinkInputSheet: View {
                     Image(systemName: "link")
                         .foregroundColor(AppColors.textTertiary)
                     
-                    TextField("https://tr.wikipedia.org/...", text: $urlString)
+                    TextField("web_sheet_placeholder".localized, text: $urlString)
                         .keyboardType(.URL)
                         .autocapitalization(.none)
                         .disableAutocorrection(true)

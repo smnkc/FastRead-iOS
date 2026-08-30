@@ -44,7 +44,7 @@ public struct ReaderAppearanceView: View {
                 
                 // BAŞLIK
                 HStack {
-                    Text("Okuyucu görünümü")
+                    Text("appr_title".localized)
                         .font(.system(size: 26, weight: .bold))
                         .foregroundColor(AppColors.textPrimary)
                     Spacer()
@@ -55,7 +55,7 @@ public struct ReaderAppearanceView: View {
                 
                 // 1. SABİT (PINNED) CANLI ÖNİZLEME KARTI - KAYDIRIRKEN DE ÜSTTE KALIR
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("ÖNİZLEME")
+                    Text("appr_preview".localized)
                         .font(.system(size: 11, weight: .semibold))
                         .foregroundColor(AppColors.textSecondary)
                         .padding(.leading, 8)
@@ -80,12 +80,12 @@ public struct ReaderAppearanceView: View {
                             HStack {
                                 Image(systemName: "sparkles")
                                     .foregroundColor(AppColors.textPrimary)
-                                Text("Ön ayarlar")
+                                Text("appr_presets_title".localized)
                                     .font(.system(size: 16, weight: .semibold))
                                     .foregroundColor(AppColors.textPrimary)
                             }
                             
-                            Text("Ne seçeceğinizden emin değil misiniz?\nÖnerdiğimiz ön ayarlardan birini kullanın.")
+                            Text("appr_presets_desc".localized)
                                 .font(.system(size: 13, weight: .regular))
                                 .foregroundColor(AppColors.textSecondary)
                                 .lineSpacing(3)
@@ -98,7 +98,7 @@ public struct ReaderAppearanceView: View {
                                             theme.preset = item
                                         }
                                     }) {
-                                        Text(item.rawValue)
+                                        Text(item.localizedName)
                                             .font(.system(size: 14, weight: isSelected ? .semibold : .regular))
                                             .foregroundColor(AppColors.textPrimary)
                                             .frame(maxWidth: .infinity)
@@ -127,7 +127,7 @@ public struct ReaderAppearanceView: View {
                         
                         // DETAYLI GÖRÜNÜM AYARLARI KARTI
                         VStack(alignment: .leading, spacing: 18) {
-                            Text("Görünüm")
+                            Text("appr_section_appearance".localized)
                                 .font(.system(size: 13, weight: .semibold))
                                 .foregroundColor(AppColors.textSecondary)
                                 .textCase(.uppercase)
@@ -136,7 +136,7 @@ public struct ReaderAppearanceView: View {
                             HStack {
                                 Image(systemName: "circle.lefthalf.filled")
                                     .foregroundColor(AppColors.textPrimary)
-                                Text("Arka plan")
+                                Text("appr_bg_title".localized)
                                     .font(.system(size: 16, weight: .medium))
                                     .foregroundColor(AppColors.textPrimary)
                                 
@@ -150,7 +150,7 @@ public struct ReaderAppearanceView: View {
                                             }
                                         }) {
                                             HStack {
-                                                Text(bg.rawValue)
+                                                Text(bg.localizedName)
                                                 if theme.background == bg {
                                                     Image(systemName: "checkmark")
                                                 }
@@ -159,7 +159,7 @@ public struct ReaderAppearanceView: View {
                                     }
                                 } label: {
                                     HStack(spacing: 6) {
-                                        Text(theme.background.rawValue)
+                                        Text(theme.background.localizedName)
                                             .font(.system(size: 15, weight: .medium))
                                         Image(systemName: "chevron.up.chevron.down")
                                             .font(.system(size: 12, weight: .medium))
@@ -182,7 +182,7 @@ public struct ReaderAppearanceView: View {
                                     Text("A")
                                         .font(.system(size: 18, weight: .bold))
                                         .foregroundColor(AppColors.textPrimary)
-                                    Text("Metin rengi")
+                                    Text("appr_text_color_title".localized)
                                         .font(.system(size: 16, weight: .medium))
                                         .foregroundColor(AppColors.textPrimary)
                                 }
@@ -195,7 +195,7 @@ public struct ReaderAppearanceView: View {
                                                 theme.contrast = item
                                             }
                                         }) {
-                                            Text(item.rawValue)
+                                            Text(item.localizedName)
                                                 .font(.system(size: 14, weight: isSelected ? .semibold : .regular))
                                                 .foregroundColor(AppColors.textPrimary)
                                                 .frame(maxWidth: .infinity)
@@ -223,7 +223,7 @@ public struct ReaderAppearanceView: View {
                                     Text("Aa")
                                         .font(.system(size: 16, weight: .semibold))
                                         .foregroundColor(AppColors.textPrimary)
-                                    Text("Odak harfi rengi")
+                                    Text("appr_orp_color_title".localized)
                                         .font(.system(size: 16, weight: .medium))
                                         .foregroundColor(AppColors.textPrimary)
                                 }
@@ -261,7 +261,7 @@ public struct ReaderAppearanceView: View {
                                 HStack {
                                     Image(systemName: "line.3.horizontal")
                                         .foregroundColor(AppColors.textPrimary)
-                                    Text("Kılavuz belirginliği")
+                                    Text("appr_guide_vis_title".localized)
                                         .font(.system(size: 16, weight: .medium))
                                         .foregroundColor(AppColors.textPrimary)
                                 }
@@ -274,7 +274,7 @@ public struct ReaderAppearanceView: View {
                                                 theme.guideVisibility = item
                                             }
                                         }) {
-                                            Text(item.rawValue)
+                                            Text(item.localizedName)
                                                 .font(.system(size: 14, weight: isSelected ? .semibold : .regular))
                                                 .foregroundColor(AppColors.textPrimary)
                                                 .frame(maxWidth: .infinity)
@@ -302,7 +302,7 @@ public struct ReaderAppearanceView: View {
                                     Text("aA")
                                         .font(.system(size: 16, weight: .bold))
                                         .foregroundColor(AppColors.textPrimary)
-                                    Text("Metin boyutu")
+                                    Text("appr_text_size_title".localized)
                                         .font(.system(size: 16, weight: .medium))
                                         .foregroundColor(AppColors.textPrimary)
                                 }
@@ -315,7 +315,7 @@ public struct ReaderAppearanceView: View {
                                                 theme.textSize = item
                                             }
                                         }) {
-                                            Text(item.rawValue)
+                                            Text(item.localizedName)
                                                 .font(.system(size: 14, weight: isSelected ? .semibold : .regular))
                                                 .foregroundColor(AppColors.textPrimary)
                                                 .frame(maxWidth: .infinity)
@@ -341,7 +341,7 @@ public struct ReaderAppearanceView: View {
                             HStack {
                                 Image(systemName: "pencil.line")
                                     .foregroundColor(AppColors.textPrimary)
-                                Text("Yazı tipi")
+                                Text("appr_font_title".localized)
                                     .font(.system(size: 16, weight: .medium))
                                     .foregroundColor(AppColors.textPrimary)
                                 
@@ -390,24 +390,7 @@ public struct ReaderAppearanceView: View {
                     .padding(.bottom, 40)
                 }
             }
-            
-            // BİLGİLENDİRME MODALI (Ekran 19)
-            if showInfoModal {
-                CustomModalDialog(
-                    title: "Okuyucu görünümü",
-                    message: "Renkleri, metin boyutunu ve daha fazlasını ayarlayarak okuyucunuzun görsel stilini özelleştirin.",
-                    buttonTitle: "Anladım"
-                ) {
-                    showInfoModal = false
-                }
-            }
         }
         .navigationBarHidden(true)
-        .onAppear {
-            if !hasShownAppearanceInfoModal {
-                hasShownAppearanceInfoModal = true
-                showInfoModal = true
-            }
-        }
     }
 }

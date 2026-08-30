@@ -41,7 +41,7 @@ public struct ReaderHapticsView: View {
                 
                 // BAŞLIK
                 HStack {
-                    Text("Okuyucu hissi")
+                    Text("haptics_title".localized)
                         .font(.system(size: 28, weight: .bold))
                         .foregroundColor(AppColors.textPrimary)
                     Spacer()
@@ -54,7 +54,7 @@ public struct ReaderHapticsView: View {
                     VStack(spacing: 20) {
                         // BİLGİLENDİRME KARTI
                         VStack(alignment: .leading, spacing: 8) {
-                            Text("FastRead, okurken dokunsal geri bildirim verilmesini sağlar. Bu, kavrayışı artırmaya ve ilgiyi sürdürmeye yardımcı olur.")
+                            Text("haptics_info".localized)
                                 .font(.system(size: 15, weight: .regular))
                                 .foregroundColor(AppColors.textSecondary)
                                 .lineSpacing(4)
@@ -70,7 +70,7 @@ public struct ReaderHapticsView: View {
                         
                         // HİS AYARLARI KARTI (Ekran 26)
                         VStack(alignment: .leading, spacing: 18) {
-                            Text("His")
+                            Text("sec_haptics".localized)
                                 .font(.system(size: 13, weight: .semibold))
                                 .foregroundColor(AppColors.textSecondary)
                                 .textCase(.uppercase)
@@ -82,12 +82,12 @@ public struct ReaderHapticsView: View {
                                         .font(.system(size: 18, weight: .medium))
                                         .foregroundColor(AppColors.textPrimary)
                                     
-                                    Text("Kelime")
+                                    Text("haptic_word_title".localized)
                                         .font(.system(size: 16, weight: .semibold))
                                         .foregroundColor(AppColors.textPrimary)
                                 }
                                 
-                                Text("Her kelimenin başında verilecek dokunsal geri bildirim.")
+                                Text("haptic_word_desc".localized)
                                     .font(.system(size: 13, weight: .regular))
                                     .foregroundColor(AppColors.textSecondary)
                                     .padding(.leading, 28)
@@ -102,7 +102,7 @@ public struct ReaderHapticsView: View {
                                                 HapticsManager.shared.trigger(intensity: item)
                                             }
                                         }) {
-                                            Text(item.rawValue)
+                                            Text(item.localizedName)
                                                 .font(.system(size: 14, weight: isSelected ? .semibold : .regular))
                                                 .foregroundColor(AppColors.textPrimary)
                                                 .frame(maxWidth: .infinity)
@@ -132,12 +132,12 @@ public struct ReaderHapticsView: View {
                                         .font(.system(size: 18, weight: .medium))
                                         .foregroundColor(AppColors.textPrimary)
                                     
-                                    Text("Cümle sonu")
+                                    Text("haptic_sentence_title".localized)
                                         .font(.system(size: 16, weight: .semibold))
                                         .foregroundColor(AppColors.textPrimary)
                                 }
                                 
-                                Text("Her cümlenin sonunda verilecek dokunsal geri bildirim.")
+                                Text("haptic_sentence_desc".localized)
                                     .font(.system(size: 13, weight: .regular))
                                     .foregroundColor(AppColors.textSecondary)
                                     .padding(.leading, 28)
@@ -152,7 +152,7 @@ public struct ReaderHapticsView: View {
                                                 HapticsManager.shared.triggerSentenceEnd(intensity: item)
                                             }
                                         }) {
-                                            Text(item.rawValue)
+                                            Text(item.localizedName)
                                                 .font(.system(size: 14, weight: isSelected ? .semibold : .regular))
                                                 .foregroundColor(AppColors.textPrimary)
                                                 .frame(maxWidth: .infinity)
