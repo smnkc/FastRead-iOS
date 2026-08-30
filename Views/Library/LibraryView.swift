@@ -205,6 +205,9 @@ public struct LibraryView: View {
         .onAppear {
             loadDocuments()
         }
+        .onReceive(NotificationCenter.default.publisher(for: NSUbiquitousKeyValueStore.didChangeExternallyNotification)) { _ in
+            loadDocuments()
+        }
         .sheet(isPresented: $showWebInput) {
             WebLinkInputSheet { doc in
                 addDocument(doc)
@@ -220,17 +223,29 @@ public struct LibraryView: View {
         }
     }
     
-    // MARK: - Depolama & Aksiyonlar
+    // MARK: - Depolama & iCloud Eşzamanlama
     private func loadDocuments() {
-        if let data = UserDefaults.standard.data(forKey: storageKey),
-           let list = try? JSONDecoder().decode([DocumentItem].self, from: data) {
+        // 1. Önce iCloud Key-Value Store kontrol et, yoksa yerel UserDefaults'a bak
+        if let icloudData = NSUbiquitousKeyValueStore.default.data(forKey: storageKey),
+           let list = try? JSONDecoder().decode([DocumentItem].self, from: icloudData) {
             self.documents = list
+            // Yerel önbelleği de güncelle
+            UserDefaults.standard.set(icloudData, forKey: storageKey)
+        } else if let localData = UserDefaults.standard.data(forKey: storageKey),
+                  let list = try? JSONDecoder().decode([DocumentItem].self, from: localData) {
+            self.documents = list
+            // iCloud'a da yaz
+            NSUbiquitousKeyValueStore.default.set(localData, forKey: storageKey)
+            NSUbiquitousKeyValueStore.default.synchronize()
         }
     }
     
     private func saveDocuments() {
         if let data = try? JSONEncoder().encode(documents) {
+            // Hem yerel belleğe hem de iCloud Key-Value Store'a anında kaydet
             UserDefaults.standard.set(data, forKey: storageKey)
+            NSUbiquitousKeyValueStore.default.set(data, forKey: storageKey)
+            NSUbiquitousKeyValueStore.default.synchronize()
         }
     }
     
